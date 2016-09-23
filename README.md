@@ -1,5 +1,5 @@
 # KDEMutationPlot
-Creates a figure using kernel density estimation to show mutational landscape
+Creates a figure using kernel density estimation to show the mutational landscape of a protein.
 
 Example output (before manually adjusting label positions):
 
