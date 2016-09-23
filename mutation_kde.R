@@ -34,6 +34,9 @@ pdf(file=args[5],width=7.0,height=3.5)                  # TYK2_KDE.pdf is the sa
 ########## First Panel Begin #################################################
 ##############################################################################
 
+theme.p1 <- theme_empty
+theme.p1$plot.title <- element_text(hjust=0)
+
 # Only using missense mutations for kernel density estimation (KDE)
 mutation.data.missense <- subset(mutation.data, Mutation.Type=="Substitution - Missense")
 
@@ -48,7 +51,8 @@ p1 <- ( ggplot(data=mutation.data.missense, aes(x=Residue))
       + geom_text(data=highlight.data,aes(label=label, x=AA, y=y.max*1.1),size=4)
       + scale_x_continuous(limits=c(1,seq.length))
       + scale_y_continuous(limits=c(0,y.max*1.2))
-      + theme_empty
+      + theme.p1
+	    + ggtitle(unlist(strsplit(names(seq.data)," "))[1])
       )
 
 ##############################################################################
@@ -70,7 +74,7 @@ mutation.data$level <- rollapply(mutation.data$Residue, width=nrow(mutation.data
 
 # Adjusting margins to bring the graphs closer
 theme.p2 <- theme_empty
-theme.p2$plot.margin <- structure(c(-0.9, 0, 0, 0), unit = "lines", valid.unit = 3L, class = "unit")
+theme.p2$plot.margin <- structure(c(-0.8, 0, 0, 0), unit = "lines", valid.unit = 3L, class = "unit")
 theme.p2$legend.position <- "bottom"
 
 # Plot individual mutations
