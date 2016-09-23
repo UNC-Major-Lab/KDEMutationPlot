@@ -1,5 +1,5 @@
 # KDEMutationPlot
-Creates a figure using kernel density estimation to show the mutational landscape of a protein.
+Creates a figure of a protein's mutational landspace using kernel density estimation.
 
 You might need to install a few packages for the script to work: Biostrings, ggplot2, zoo, and gridExtra.
 
