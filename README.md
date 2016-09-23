@@ -1,6 +1,6 @@
 # KDEMutationPlot
-Creates a figure using kernel density estimation to find mutational hotspots
+Creates a figure using kernel density estimation to show mutational landscape
 
 Example output (before manually adjusting label positions):
 
-![Image of example output] (https://github.com/UNC-Major-Lab/KDEMutationPlot/blob/master/TYK2_KDE.png)
+![Image of example output] (https://github.com/UNC-Major-Lab/KDEMutationPlot/blob/master/example_data/TYK2_KDE.png)
