@@ -9,7 +9,7 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("Biostrings")
 ```
 
-You can run it via RStudio and update the hardcoded arguments, or you can then run the script from the command line using:
+You can run the script via RStudio after updating the hardcoded arguments, or you can run it from the command line using:
 
 ```bash
 Rscript mutation_kde.R example_data/mutations.txt example_data/aa.txt example_data/domain.txt example_data/P29597.fasta example_data/test.pdf
