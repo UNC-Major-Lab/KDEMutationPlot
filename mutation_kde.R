@@ -5,7 +5,7 @@ library(gridExtra)
 
 # Get command line arguments, or hardcode them
 #args <- commandArgs(trailingOnly = TRUE)
-args <- c("TYK2_Data/mutations.txt", "TYK2_Data/aa.txt", "TYK2_Data/domain.txt", "TYK2_Data/P29597.fasta", "TYK2_Data/TYK2_KDE.pdf")
+args <- c("example_data/mutations.txt", "example_data/aa.txt", "example_data/domain.txt", "example_data/P29597.fasta", "example_data/TYK2_KDE.pdf")
 
 # Theme that removes all axes, backgrounds, etc
 theme_empty <- theme_bw()
@@ -28,7 +28,7 @@ seq.data <- readAAStringSet(args[4], "FASTA")             # P29597.fasta is the 
 seq.length <- length(seq.data[[1]])
 
 # Create new PDF file
-pdf(file=args[5],width=8.14,height=3.64)                  # TYK2_KDE.pdf is the sample output file
+pdf(file=args[5],width=7.0,height=3.5)                  # TYK2_KDE.pdf is the sample output file
 
 ##############################################################################
 ########## First Panel Begin #################################################
@@ -70,7 +70,7 @@ mutation.data$level <- rollapply(mutation.data$Residue, width=nrow(mutation.data
 
 # Adjusting margins to bring the graphs closer
 theme.p2 <- theme_empty
-theme.p2$plot.margin <- structure(c(-1.5, 0, 0, 0), unit = "lines", valid.unit = 3L, class = "unit")
+theme.p2$plot.margin <- structure(c(-0.9, 0, 0, 0), unit = "lines", valid.unit = 3L, class = "unit")
 theme.p2$legend.position <- "bottom"
 
 # Plot individual mutations
