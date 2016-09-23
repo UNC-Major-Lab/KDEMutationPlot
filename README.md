@@ -9,6 +9,12 @@ source("https://bioconductor.org/biocLite.R")
 biocLite("Biostrings")
 ```
 
+You can run it via RStudio and update the hardcoded arguments, or you can then run the script from the command line using:
+
+```bash
+Rscript mutation_kde.R example_data/mutations.txt example_data/aa.txt example_data/domain.txt example_data/P29597.fasta example_data/test.pdf
+```
+
 Example output (before manually adjusting label positions):
 
 ![Image of example output] (https://github.com/UNC-Major-Lab/KDEMutationPlot/blob/master/example_data/TYK2_KDE.png)
