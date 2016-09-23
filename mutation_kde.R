@@ -4,8 +4,10 @@ library(zoo)
 library(gridExtra)
 
 # Get command line arguments, or hardcode them
-#args <- commandArgs(trailingOnly = TRUE)
-args <- c("example_data/mutations.txt", "example_data/aa.txt", "example_data/domain.txt", "example_data/P29597.fasta", "example_data/TYK2_KDE.pdf")
+args <- commandArgs(trailingOnly = TRUE)
+if (length(args) == 0) {
+	args <- c("example_data/mutations.txt", "example_data/aa.txt", "example_data/domain.txt", "example_data/P29597.fasta", "example_data/TYK2_KDE.pdf")
+}
 
 # Theme that removes all axes, backgrounds, etc
 theme_empty <- theme_bw()
