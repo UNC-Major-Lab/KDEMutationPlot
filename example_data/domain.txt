@@ -1,0 +1,2 @@
+Domain Name	Start	EndNTR	1	25FERM	26	431SH2	450	529Pseudo-Kinase	589	866Kinase	897	1176
+CTR	1177	1187
