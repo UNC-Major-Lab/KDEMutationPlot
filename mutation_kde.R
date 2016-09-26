@@ -42,13 +42,15 @@ theme.p1$plot.title <- element_text(hjust=0)
 # Only using missense mutations for kernel density estimation (KDE)
 mutation.data.missense <- subset(mutation.data, Mutation.Type=="Substitution - Missense")
 
+# Adjust is a parameter that affects the width of the normal distribution each mutation contributes.
+# It is to 0.05 because it seems to be an aesthetically pleasing value. There is no science behind the choice.
+kde.adjust <- 0.05
 # Need to know maximum value of KDE to place vertical lines and labels for highlighted residues
-y.max <- max(density(mutation.data.missense$Residue,adjust=.05)$y)
+y.max <- max(density(mutation.data.missense$Residue,adjust=kde.adjust)$y)
 
 # Plot kernel density estimation and highlighted residues
-# Adjust is to .05 because it seems to be an aesthetically pleasing value. There is no science behind the choice
 p1 <- ( ggplot(data=mutation.data.missense, aes(x=Residue)) 
-      + stat_density(adjust=.05, fill='#EEF1F6', color="black") 
+      + stat_density(adjust=kde.adjust, fill='#EEF1F6', color="black") 
       + geom_segment(data=highlight.data,aes(x=AA,y=0,xend=AA,yend=y.max), linetype = "dashed")
       + geom_text(data=highlight.data,aes(label=label, x=AA, y=y.max*1.1),size=4)
       + scale_x_continuous(limits=c(1,seq.length))
